@@ -36,7 +36,8 @@ class AsanaPolice():
 
     def get_expired_tasks(self, users: list):
         incomplete_tasks = []
-        yesterday = datetime.datetime.now() - datetime.timedelta(1)
+        JST = datetime.timezone(datetime.timedelta(hours=+9), 'JST')
+        yesterday = datetime.datetime.now(JST) - datetime.timedelta(1)
 
         params = {
             'workspace': f'{self.workspace_id}',
