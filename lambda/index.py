@@ -103,6 +103,5 @@ def handler(event, context):
 
 if __name__ == '__main__':
     result = handler(None, None)
-    print(result)
-    # import json
-    # print(json.dumps(result))
+    import json
+    print(json.dumps(result))
