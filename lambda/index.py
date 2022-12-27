@@ -96,7 +96,7 @@ def handler(event, context):
         messages.append(msg)
 
     asana_police.post_chat(messages)
-    return True
+    return messages
 
 
 if __name__ == '__main__':
