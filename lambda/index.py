@@ -59,6 +59,8 @@ class AsanaPolice():
             for task in tasks:
                 if task['due_on'] is None:
                     continue
+                if task['completed'] is True:
+                    continue
                 if datetime.datetime.strptime(task['due_on'], '%Y-%m-%d').replace(tzinfo=JST) < yesterday:
                     result['tasks'].append({
                         'name': task['name'],
