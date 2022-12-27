@@ -97,6 +97,10 @@ def handler(event, context):
         msg = msg + '```'
         messages.append(msg)
 
+    if len(messages) == 0:
+        msg = '期日の過ぎているタスクはありません🎉 \n'
+        messages.append(msg)
+
     asana_police.post_chat(messages)
     return messages
 
